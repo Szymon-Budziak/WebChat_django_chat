@@ -14,7 +14,15 @@ Project consists of 3 main parts:
 
 After running a server (prerequisites are below) we should have such a website where we can sign up or log in:
 
-When we are logged in we can enter rooms and have a chat with other users:
+![main_page](https://user-images.githubusercontent.com/75530523/207906155-9f92690c-3f73-413b-8fab-8ed656f065e4.png)
+
+When we are logged in we can enter rooms:
+
+![rooms](https://user-images.githubusercontent.com/75530523/207906197-b49c437f-d0a6-4f13-a13d-c84fd5c68224.png)
+
+After entering one of the rooms we can have a chat with other users:
+
+![chat](https://user-images.githubusercontent.com/75530523/207906251-5111e6c7-3556-442e-bc9b-97dc7772100f.png)
 
 When we log out we are redirected to the main page.
 ## Prerequisites
