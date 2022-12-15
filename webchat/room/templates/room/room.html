@@ -36,17 +36,11 @@
     const roomName = JSON.parse(document.getElementById('json-roomname').textContent)
     const userName = JSON.parse(document.getElementById('json-username').textContent)
 
-    const chatSocket = new WebSocket(
-        "ws://"
-        + window.location.host
-        + "/ws/"
-        + roomName
-        + "/"
-    )
+    const chatSocket = new WebSocket("ws://" + window.location.host + "/ws/" + roomName + "/")
 
-    chatSocket.onmessage = function (e) {
+    chatSocket.onmessage = function (event) {
         console.log("onmessage")
-        const data = JSON.parse(e.data);
+        const data = JSON.parse(event.data);
 
         if (data.message) {
             document.querySelector('#chat-messages').innerHTML += ('<b>' + data.username + '</b>: ' + data.message + '<br>');
@@ -56,12 +50,12 @@
         }
     }
 
-    chatSocket.onclose = function (e) {
+    chatSocket.onclose = function (event) {
         console.log("onclose")
     }
 
-    document.querySelector('#chat-message-submit').onclick = function (e) {
-        e.preventDefault();
+    document.querySelector('#chat-message-submit').onclick = function (event) {
+        event.preventDefault();
 
         const messageInputDom = document.querySelector('#chat-message-input');
         const message = messageInputDom.value;
