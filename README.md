@@ -1,6 +1,6 @@
 # WebChat
 
-WebChat project written in Django and Tailwind CSS for WebRTC course at UNINA.
+"WebChat" a real-time chat application project written in Django, Channels and design along with Tailwind CSS for WebRTC course at UNINA.
 
 ## The structure of the project
 
