@@ -4,7 +4,7 @@
 
 {% block content %}
 <div class="p-10 text-center">
-    <h1 class="text-4xl text-black">Rooms</h1>
+    <h1 class="text-3xl lg:text-6xl text-blue-800">Rooms</h1>
 </div>
 
 <div class="w-full flex flex-wrap items-center">
@@ -13,9 +13,17 @@
         <div class="text-center bg-white rounded-xl p-4">
             <h2 class="mb-5 text-2xl">{{ room.name }}</h2>
             <a href="{% url 'room' room.slug %}"
-               class="block  px-5 py-3 text-white rounded-xl bg-blue-800 hover:bg-blue-400">Join</a>
+               class="block px-5 py-3 text-white rounded-xl bg-blue-800 hover:bg-blue-400">Join</a>
         </div>
     </div>
     {% endfor %}
+    {% if request.user.is_superuser %}
+    <div class="w-full py-3 w-1/4 px-5">
+        <div class="text-center bg-white rounded-xl p-4">
+            <h2 class="mb-5 text-2xl">Create new room</h2>
+            <a href="/rooms/newroom/" class="block px-5 py-3 text-white rounded-xl bg-blue-800 hover:bg-blue-400">+</a>
+        </div>
+    </div>
+    {% endif %}
 </div>
 {% endblock %}
