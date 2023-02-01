@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     "django.contrib.sites",
     # 3rd party apps
     "channels",
+    'axes',
     # apps
     "core",
     "room",
@@ -64,6 +65,7 @@ MIDDLEWARE = [
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
+    'axes.middleware.AxesMiddleware',
 ]
 
 ROOT_URLCONF = "webchat.urls"
@@ -104,6 +106,7 @@ DATABASES = {
 }
 
 AUTHENTICATION_BACKENDS = [
+    "axes.backends.AxesBackend",
     "django.contrib.auth.backends.ModelBackend",
     "allauth.account.auth_backends.AuthenticationBackend",
 ]
@@ -159,3 +162,6 @@ SOCIALACCOUNT_PROVIDERS = {
         'OAUTH_PKCE_ENABLED': True,
     }
 }
+
+AXES_FAILURE_LIMIT: 5
+AXES_COOLOFF_TIME: 1
